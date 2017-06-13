@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  # you can also explicitly define enum as:  enum access_level: [:candidate => 0, :company_admin => 1, :super_admin => 2}
 
-         enum access_level: [:employee, :company_admin, :super_admin]
+  enum access_level: [:candidate, :company_admin, :super_admin]
 end
