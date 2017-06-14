@@ -1,4 +1,11 @@
 
+a.headerLogo:hover {
+    color: white !important;
+}
+
+
+
+
 .login-container{
     position: relative;
     width: 300px;
