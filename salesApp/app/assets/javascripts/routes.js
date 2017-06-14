@@ -6,8 +6,7 @@ angular
         .module('app')
         .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             $stateProvider
-                .state({
-                    name: 'home',
+                .state('home', {
                     url: '/',
                     templateUrl: 'home/home.html',
                     controller: 'HomeController as vm'
