@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get '/user/:id', to: 'user#show'
 
+  patch '/user/:id', to: 'user#update'
+
 end

@@ -15,6 +15,16 @@ class UserController < ApplicationController
     end
   end
 
+  def update
+    user = User.find(params[:id])
+    
+      if user === current_user && user.update(user_params.reject{|_, v| v.blank?})
+        render json: {status: 'ok'}
+      else
+        render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+      end
+  end
+
 
 
 
@@ -25,6 +35,6 @@ class UserController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :access_level, :first_name, :last_name, :company)
+    params.require(:user).permit(:id, :password, :first_name, :last_name, :access_level, :email, :phone, :zipcode, :linkedin, :college, :major, :college_graduation, :company, :graduated, :hired)
   end
 end

@@ -1,16 +1,35 @@
 <div class="container">
-  <div class="col-lg-10">
-      <h1>{{vm.user.first_name}} {{vm.user.last_name}} User Profile</h1><h1 ng-show="vm.user.access_level === 'company_admin'">-{{vm.user.company}}</h1>
+  <div class="col-lg-12">
+      <h2>{{vm.user.first_name}} {{vm.user.last_name}} User Profile</h2><h2 ng-show="vm.user.access_level === 'company_admin'">- Company: {{vm.user.company}}</h2>
       <h2>Email: {{vm.user.email}}</h2>
       <h2>Phone: {{vm.user.phone}}</h2>
       <h2>Profile Type: {{vm.user.access_level}}</h2>
-      <h2>Zipcode: {{vm.user.zipcode}}</h2>
-      <h2>LinkedIn: {{vm.user.linkedin}}</h2>
-      <h2>College: {{vm.user.college}}</h2>
-      <h2>Major: {{vm.user.major}}</h2>
-      <h2>College Graduation Year: {{vm.user.college_graduation}}</h2>
-      <hr><br>
-      <h2>Graduated Victory Lap: {{vm.user.graduated}}</h2>
-      <h2>Currently Employed: {{vm.user.hired}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">Zipcode: {{vm.user.zipcode}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">LinkedIn: {{vm.user.linkedin}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">College: {{vm.user.college}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">Major: {{vm.user.major}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">College Graduation Year: {{vm.user.college_graduation}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">Graduated Victory Lap: {{vm.user.graduated}}</h2>
+      <h2 ng-show="!vm.user.access_level === 'company_admin'">Currently Employed: {{vm.user.hired}}</h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-lg-12">
+<form>
+  <h2>Edit Profile</h2>
+  <p>First Name: <input type="text" name="first_name" ng-model="vm.user.first_name"></p><br>
+  <p>Last Name: <input type="text" name="last_name" ng-model="vm.user.last_name"></p><br>
+  <p ng-show="vm.user.access_level === 'company_admin'">Company: <input type="text" name="company" ng-model="vm.user.company"></p><br>
+  <p>Email: <input type="email" name="email" ng-model="vm.user.email"></p><br>
+  <p>Phone: <input type="text" name="phone" ng-model="vm.user.phone"></p><br>
+  <p ng-show="!vm.user.access_level === 'company_admin'">Zipcode: <input type="text" name="zipcode" ng-model="vm.user.zipcode"></p><br>
+  <p ng-show="!vm.user.access_level === 'company_admin'">Linkedin: <input type="url" name="linkedin" ng-model="vm.user.linkedin"></p><br>
+  <p ng-show="!vm.user.access_level === 'company_admin'">College: <input type="text" name="college" ng-model="vm.user.college"></p><br>
+  <p ng-show="!vm.user.access_level === 'company_admin'">Major: <input type="text" name="major" ng-model="vm.user.major"></p><br>
+  <p ng-show="!vm.user.access_level === 'company_admin'">College Graduation Year<input type="text" name="college_graduation" ng-model="vm.user.college_graduation"></p><br>
+  <p ng-show="!vm.user.access_level === 'company_admin'">Currently Employed: <input type="radio" name="graduated" ng-model="vm.user.hired">True <input type="radio" name="graduated" ng-model="vm.user.hired">False</p>
+  <button type="submit" class="btn btn-default" ng-click="vm.editUser(vm.user.id, vm.user)">Save Edit</button>
+</form>
   </div>
 </div>

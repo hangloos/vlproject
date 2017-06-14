@@ -6,7 +6,7 @@
         .module('app')
         .controller('HomeController', HomeController)
 
-   function HomeController(Auth, $rootScope, $location, $http) {
+   function HomeController(Auth, $rootScope, $location, $http, UsersFactory) {
         
         var vm = this
         vm.logout = Auth.logout
@@ -14,10 +14,16 @@
         vm.register = register
         vm.location = location.hash
         vm.changeLocation = changeLocation
+        vm.editUser = editUser
 
         function changeLocation(location) {
           vm.location = location
         }
+
+        function editUser(id, user) {
+          return UsersFactory.updateUser(id, user)
+        }
+
 
         vm.open = function(item){
             $('.ui.modal.' + item).modal('show')
