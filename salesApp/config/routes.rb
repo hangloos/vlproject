@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/RegisterAdminSecretPage', to: 'user#new'
   post '/RegisterAdminSecretPage', to: 'user#create'
 
+  get '/user/:id', to: 'user#show'
+
 end

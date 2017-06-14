@@ -16,6 +16,11 @@ angular
                     templateUrl: 'home/login.html',
                     controller: 'HomeController as vm'
                 })
+                .state('home.profile', {
+                    url: 'profile',
+                    templateUrl: 'home/profile.html',
+                    controller: 'HomeController as vm'
+                })
                 // .state('home.register', {
                 //     url: 'RegisterAdminSecretPage',
                 //     templateUrl: 'home/register.html',

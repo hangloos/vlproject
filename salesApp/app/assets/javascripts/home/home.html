@@ -1,7 +1,7 @@
 <div ng-include="'home/navbar.html'"></div>
 <div ng-include="'home/login.html'" ng-show="!vm.user"></div>
 
-<div class="col-lg-8">
+<div class="col-lg-8" ng-show="vm.location === '#/'">
   <h1 ng-show="vm.user">Welcome {{vm.user.first_name}} {{vm.user.last_name}}</h1>
   <h3 ng-show="vm.user">User Type: {{vm.user.access_level}}</h3>
   <p>Victory Lap finds, qualifies, and trains the next generation of top sellers, and helps employers hire better sales reps, faster. Whether you’re a young professional looking for for a better opportunity, or an employer looking to hire/train your new hires, Victory Lap is here to help.</p><br>
