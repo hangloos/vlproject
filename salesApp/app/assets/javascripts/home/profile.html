@@ -11,9 +11,10 @@
       <h2 ng-show="vm.user.access_level === 'candidate'">College Graduation Year: {{vm.user.college_graduation}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">Graduated Victory Lap: {{vm.user.graduated}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">Currently Employed: {{vm.user.hired}}</h2>
+        <button class="btn-default" ng-click="showEditProfileForm = !showEditProfileForm">Edit Profile</button>
   </div>
   <div class="col-md-6">
-<form>
+<form ng-show="showEditProfileForm">
   <h2>Edit Profile</h2>
   <p>First Name: <input type="text" name="first_name" ng-model="vm.user.first_name"></p><br>
   <p>Last Name: <input type="text" name="last_name" ng-model="vm.user.last_name"></p><br>
