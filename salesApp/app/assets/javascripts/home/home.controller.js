@@ -44,7 +44,7 @@
                   window.localStorage.setItem('user', JSON.stringify(user))
                   vm.user = user
                   location.reload()
-                  $location.path('/reviews')
+                  $location.path('/')
                 }, function(error)  {
                   if (error.data.error) {
                     vm.error = error.data.error
@@ -71,7 +71,7 @@
                       vm.user = registeredUser
                       window.localStorage.setItem('user', JSON.stringify(vm.user))
                       location.reload()
-                      $location.path('/reviews')
+                      $location.path('/')
                 }, function(error)  {
                  vm.error = error.data.errors
                  vm.errors = error.data.errors

@@ -16,11 +16,11 @@ angular
                     templateUrl: 'home/login.html',
                     controller: 'HomeController as vm'
                 })
-                .state('home.register', {
-                    url: 'RegisterAdminSecretPage',
-                    templateUrl: 'home/register.html',
-                    controller: 'HomeController as vm'
-                })
+                // .state('home.register', {
+                //     url: 'RegisterAdminSecretPage',
+                //     templateUrl: 'home/register.html',
+                //     controller: 'HomeController as vm'
+                // })
 
                 $urlRouterProvider.otherwise('/');
           // $locationProvider.html5Mode(false);
