@@ -19,7 +19,7 @@
             <li><a ng-show="!!vm.user" ng-click="vm.logout()">Logout</a></li>
           </ul> -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a ng-show="!vm.user" ui-sref=".login">Login</a></li>
+            <li><a ng-show="!vm.user" ng-click="showLoginForm = !showLoginForm" href="/">Login</a></li>
             <li><a ng-show="!!vm.user" ng-click="vm.logout()">Logout</a></li>           
           </ul>
         </div><!-- /.navbar-collapse -->

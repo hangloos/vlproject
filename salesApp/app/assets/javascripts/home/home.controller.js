@@ -12,6 +12,8 @@
         vm.logout = Auth.logout
         vm.login = login
         vm.register = register
+        vm.location = location.hash
+        
 
         vm.open = function(item){
             $('.ui.modal.' + item).modal('show')

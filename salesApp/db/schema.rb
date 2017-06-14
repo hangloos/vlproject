@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614005454) do
+ActiveRecord::Schema.define(version: 20170614162446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "access_level"
     t.string   "first_name"
     t.string   "last_name"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20170614005454) do
     t.string   "college"
     t.integer  "college_graduation"
     t.string   "major"
-    t.boolean  "hired"
-    t.boolean  "graduated"
+    t.boolean  "hired",                  default: false
+    t.boolean  "graduated",              default: false
     t.integer  "class_number"
     t.string   "company"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
