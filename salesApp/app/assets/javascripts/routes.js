@@ -5,8 +5,6 @@
 angular
         .module('app')
         .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-          $urlRouterProvider.otherwise('/');
-          $locationProvider.html5Mode(false);
             $stateProvider
                 .state({
                     name: 'home',
@@ -14,6 +12,19 @@ angular
                     templateUrl: 'home/home.html',
                     controller: 'HomeController as vm'
                 })
+                .state('home.login', {
+                    url: 'login',
+                    templateUrl: 'home/login.html',
+                    controller: 'HomeController as vm'
+                })
+                .state('home.register', {
+                    url: 'RegisterAdminSecretPage',
+                    templateUrl: 'home/register.html',
+                    controller: 'HomeController as vm'
+                })
+
+                $urlRouterProvider.otherwise('/');
+          // $locationProvider.html5Mode(false);
 
 
               })
