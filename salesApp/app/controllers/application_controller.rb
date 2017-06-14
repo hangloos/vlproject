@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   respond_to :json
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # respond_to :json
   after_filter :set_csrf_cookie_for_ng
 
     def set_csrf_cookie_for_ng
