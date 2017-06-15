@@ -8,10 +8,12 @@
 
 
   
-  <a class="btn btn-large" href="/">Home</a>
+  <a class="btn btn-default btn-block login" href="/">Home</a>
 
-  <div class='content-container signup'>
-  <div class='wrapper container'>
+  <div class="container">
+    <div class="login-container">
+            <div class="avatar"></div>
+            <div class="form-box">
 
   <%= form_for :user do |f| %>
   <div class="field">
@@ -51,9 +53,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <button class="btn btn-block login"><%= f.submit "Sign up" %></button>
   </div>
 <% end %>
 
+</div>
 </div>
 </div>
