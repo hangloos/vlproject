@@ -100,6 +100,7 @@
             Auth.register(vm.userForm, config)
                   .then(function(registeredUser)  {
                       vm.user = registeredUser
+                      UsersFactory.setUser(registeredUser)
                       window.localStorage.setItem('user', JSON.stringify(vm.user))
                       location.reload()
                       $location.path('/')

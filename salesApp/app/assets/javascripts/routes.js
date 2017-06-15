@@ -26,12 +26,26 @@ angular
                     templateUrl: 'home/users.html',
                     // controller: 'HomeController as vm'
                 })
+                .state('home.candidates', {
+                    url:'candidates',
+                    templateUrl: 'home/candidates.html'
+                })
 
                 $urlRouterProvider.otherwise('/');
           // $locationProvider.html5Mode(false);
 
 
               })
+
+        .run(function($rootScope, UsersFactory, $location) {
+            $rootScope.$on("$locationChangeStart", function(event) {
+                if(!localStorage.user)  {
+                    console.log('deny')
+                    // event.preventDefault();
+                    $location.path('/')
+                } 
+            })
+        })
 
 
 

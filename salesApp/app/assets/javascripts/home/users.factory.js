@@ -3,9 +3,21 @@ angular
   .factory('UsersFactory', UsersFactory)
 
   function UsersFactory($stateParams, $http) {
+    var user;
     return {
       updateUser: updateUser,
-      getUsers: getUsers
+      getUsers: getUsers,
+      setUser: setUser,
+      isLoggedIn: isLoggedIn
+    }
+
+    function setUser(user)  {
+      user = user
+    }
+
+    function isLoggedIn() {
+      debugger
+      return(user)? localStorage.user : false
     }
 
     function updateUser(id, user) {
