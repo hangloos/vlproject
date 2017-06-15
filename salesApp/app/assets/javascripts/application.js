@@ -16,5 +16,6 @@
 //= require angular-devise
 //= require angular-rails-templates
 //= require bootstrap
+//= require angular-modal-service
 //= require moment
 //= require_tree .

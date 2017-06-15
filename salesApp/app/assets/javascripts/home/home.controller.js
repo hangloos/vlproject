@@ -6,7 +6,7 @@
         .module('app')
         .controller('HomeController', HomeController)
 
-   function HomeController(Auth, $rootScope, $location, $http, UsersFactory) {
+   function HomeController(Auth, $rootScope, $location, $http, UsersFactory, ModalService) {
         
         var vm = this
         vm.logout = Auth.logout
@@ -16,6 +16,8 @@
         vm.changeLocation = changeLocation
         vm.editUser = editUser
         vm.getUsers = getUsers
+
+        getUsers();
 
         function changeLocation(location) {
           vm.location = location
@@ -36,13 +38,30 @@
         }
 
 
-        vm.open = function(item){
-            $('.ui.modal.' + item).modal('show')
+        vm.modalUpdate = function (selectedUser)  {
+          vm.selectedUser = selectedUser
+          // var modalInstance = ModalService.open({
+          //   templateUrl: 'home/modals/edit.profile.admin.modal.html',
+          //   controller: 'HomeController',
+          //   resolve: {
+          //     userDetails: function() {
+          //       return selectedUser
+          //     }
+          //   }
+          // })
         }
 
-        vm.hide = function(item){
-            $('.ui.modal.' + item).modal('hide')
+        vm.updateUser = function(selectedUser)  {
+          return UsersFactory.updateUser(selectedUser.id, selectedUser)
         }
+
+        
+
+
+
+
+
+        // Authentication
 
         Auth.currentUser()
               .then(function(user)  {

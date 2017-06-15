@@ -6,7 +6,8 @@
       "angular-ui-router": "latest",
       "moment": "latest",
       "bootstrap": "latest",
-      "angular-devise": "latest" 
+      "angular-devise": "latest",
+      "angular-modal-service": "latest"
     }
   }
 }
