@@ -40,15 +40,6 @@
 
         vm.modalUpdate = function (selectedUser)  {
           vm.selectedUser = selectedUser
-          // var modalInstance = ModalService.open({
-          //   templateUrl: 'home/modals/edit.profile.admin.modal.html',
-          //   controller: 'HomeController',
-          //   resolve: {
-          //     userDetails: function() {
-          //       return selectedUser
-          //     }
-          //   }
-          // })
         }
 
         vm.updateUser = function(selectedUser)  {
