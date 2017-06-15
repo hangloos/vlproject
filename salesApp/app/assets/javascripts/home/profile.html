@@ -5,8 +5,8 @@
       <h2>Phone: {{vm.user.phone}}</h2>
       <h2>Profile Type: {{vm.user.access_level}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">Zipcode: {{vm.user.zipcode}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">LinkedIn URL: {{vm.user.linkedin}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">Resume URL: {{vm.user.resume_url}}</h2>
+      <h2 ng-show="vm.user.access_level === 'candidate'"><a href="{{vm.user.linkedin}}" target="_blank">Linkedin</h2></a>
+      <h2 ng-show="vm.user.access_level === 'candidate'"><a href="{{vm.user.resume_url}}" target="_blank">Resume</a></h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">College: {{vm.user.college}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">Major: {{vm.user.major}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">College Graduation Year: {{vm.user.college_graduation}}</h2>
