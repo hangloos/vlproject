@@ -22,7 +22,7 @@ class UserController < ApplicationController
   def update
     user = User.find(params[:id])
     
-      if user === current_user && user.update(user_params.reject{|_, v| v.blank?})
+      if user.update(user_params.reject{|_, v| v.blank?})
         render json: {status: 'ok'}
       else
         render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
