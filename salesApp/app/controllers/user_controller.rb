@@ -1,6 +1,10 @@
 require 'pry'
 class UserController < ApplicationController
 
+  def index
+    render json: User.all
+  end
+
   def new
     @user = User.new
   end

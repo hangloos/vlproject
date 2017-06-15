@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   patch '/user/:id', to: 'user#update'
 
+  get '/users', to: 'user#index'
+
 end

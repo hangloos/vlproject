@@ -21,11 +21,11 @@ angular
                     templateUrl: 'home/profile.html',
                     controller: 'HomeController as vm'
                 })
-                // .state('home.register', {
-                //     url: 'RegisterAdminSecretPage',
-                //     templateUrl: 'home/register.html',
-                //     controller: 'HomeController as vm'
-                // })
+                .state('home.users', {
+                    url: 'users',
+                    templateUrl: 'home/users.html',
+                    // controller: 'HomeController as vm'
+                })
 
                 $urlRouterProvider.otherwise('/');
           // $locationProvider.html5Mode(false);

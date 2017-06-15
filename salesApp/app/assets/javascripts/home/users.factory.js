@@ -4,7 +4,8 @@ angular
 
   function UsersFactory($stateParams, $http) {
     return {
-      updateUser: updateUser
+      updateUser: updateUser,
+      getUsers: getUsers
     }
 
     function updateUser(id, user) {
@@ -22,6 +23,12 @@ angular
       console.log(req)
       return $http(req)
           .catch(handleError)
+    }
+
+    function getUsers() {
+      return $http.get('/users')
+              .then(handleResponse)
+              .catch(handleError)
     }
 
 

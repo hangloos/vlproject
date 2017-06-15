@@ -15,9 +15,20 @@
         vm.location = location.hash
         vm.changeLocation = changeLocation
         vm.editUser = editUser
+        vm.getUsers = getUsers
 
         function changeLocation(location) {
           vm.location = location
+        }
+
+        function getUsers() {
+          return UsersFactory.getUsers()
+                .then(setUsers)
+        }
+
+        function setUsers(data) {
+          vm.users = data
+
         }
 
         function editUser(id, user) {
