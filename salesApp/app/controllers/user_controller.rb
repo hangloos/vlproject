@@ -30,11 +30,17 @@ class UserController < ApplicationController
   end
 
 
+  def destroy
+    user = User.find(params[:id])
+    if current_user.access_level == "super_admin"
+      user.delete
+    end
+  end
+
   def interview
     @user = User.find(params[:user][:id])
     @company = User.find(params[:company][:id])
     InterviewSetup.interview_email(@user, @company).deliver
-
   end
 
 

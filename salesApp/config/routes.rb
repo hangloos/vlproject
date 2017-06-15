@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   post '/setupInterview', to: 'user#interview'
 
+  delete '/user/:id', to: 'user#destroy'
+
 end

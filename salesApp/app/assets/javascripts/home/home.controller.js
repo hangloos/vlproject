@@ -42,14 +42,19 @@
           vm.selectedUser = selectedUser
         }
 
-        vm.updateUser = function(selectedUser)  {
+        vm.updateUser = function(selectedUser,number)  {        
           return UsersFactory.updateUser(selectedUser.id, selectedUser)
+    
         }
 
         vm.setupInterview = function(user, company) {
           return UsersFactory.setupInterview(user, company)
         }
         
+        vm.deleteUser = function(user)  {
+          return UsersFactory.deleteUser(user)
+                            .then(getUsers)
+        }
 
 
 

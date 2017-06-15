@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col-md-6">
-      <h2>{{vm.user.first_name}} {{vm.user.last_name}}'s User Profile</h2><h2 ng-show="vm.user.access_level === 'company_admin'">Company: {{vm.user.company}}</h2>
-      <h2>Email: {{vm.user.email}}</h2>
-      <h2>Phone: {{vm.user.phone}}</h2>
-      <h2>Profile Type: {{vm.user.access_level}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">Zipcode: {{vm.user.zipcode}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'"><a href="{{vm.user.linkedin}}" target="_blank">Linkedin</h2></a>
-      <h2 ng-show="vm.user.access_level === 'candidate'"><a href="{{vm.user.resume_url}}" target="_blank">Resume</a></h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">College: {{vm.user.college}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">Major: {{vm.user.major}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">College Graduation Year: {{vm.user.college_graduation}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">Graduated Victory Lap: {{vm.user.graduated}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">Currently Employed: {{vm.user.hired}}</h2>
-        <button class="btn-default" ng-click="showEditProfileForm = !showEditProfileForm">Edit Profile</button>
+      <h2>{{vm.user.first_name}} {{vm.user.last_name}}'s User Profile</h2><h4 ng-show="vm.user.access_level === 'company_admin'">Company: {{vm.user.company}}</h4>
+      <h4>Email: {{vm.user.email}}</h4>
+      <h4>Phone: {{vm.user.phone}}</h4>
+      <h4>Profile Type: {{vm.user.access_level}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Zipcode: {{vm.user.zipcode}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'"><a href="{{vm.user.linkedin}}" target="_blank">Linkedin</h4></a>
+      <h4 ng-show="vm.user.access_level === 'candidate'"><a href="{{vm.user.resume_url}}" target="_blank">Resume</a></h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">College: {{vm.user.college}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Major: {{vm.user.major}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">College Graduation Year: {{vm.user.college_graduation}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Graduated Victory Lap: {{vm.user.graduated}}</h2>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Currently Employed: {{vm.user.hired}}</h4>
+        <button class="btn btn-default" ng-click="showEditProfileForm = !showEditProfileForm">Edit Profile</button>
   </div>
   <div class="col-md-6">
 <form ng-show="showEditProfileForm">
@@ -21,6 +21,7 @@
   <p>Last Name: <input type="text" name="last_name" ng-model="vm.user.last_name"></p><br>
   <p ng-show="vm.user.access_level === 'company_admin'">Company: <input type="text" name="company" ng-model="vm.user.company"></p><br>
   <p>Email: <input type="email" name="email" ng-model="vm.user.email"></p><br>
+  <p>Password: <input type="password" name="password" ng-model="vm.user.password"></p>
   <p>Phone: <input type="text" name="phone" ng-model="vm.user.phone"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">Zipcode: <input type="text" name="zipcode" ng-model="vm.user.zipcode"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">Linkedin: <input type="url" name="linkedin" ng-model="vm.user.linkedin"></p><br>

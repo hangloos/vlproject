@@ -9,7 +9,8 @@ angular
       getUsers: getUsers,
       setUser: setUser,
       isLoggedIn: isLoggedIn,
-      setupInterview: setupInterview
+      setupInterview: setupInterview,
+      deleteUser: deleteUser
     }
 
     function setupInterview(user, company)  {
@@ -56,6 +57,18 @@ angular
       return $http.get('/users')
               .then(handleResponse)
               .catch(handleError)
+    }
+
+    function deleteUser(user) {
+      var req = {
+        method: 'DELETE',
+        url: '/user/' + user.id,
+        headers: {
+            'Content-Type': 'application/json'
+          }
+      }
+      return $http(req)
+                  .catch(handleError)
     }
 
 
