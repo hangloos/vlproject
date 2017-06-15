@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         
-        
+        <input class="prompt" type="text" placeholder="Search Users" ng-model="searchBox">
         <div class="col-md-12">
         <h4>Users</h4>
         <div class="table-responsive">
@@ -18,7 +18,7 @@
                     <th>Hired?</th>
                     <th>Access Level</th>
                    </thead>
-    <tbody ng-repeat="user in vm.users">
+    <tbody ng-repeat="user in vm.users | orderBy: '-created_at' | filter:searchBox">
     
     <tr>
     <td>{{user.first_name}}</td>

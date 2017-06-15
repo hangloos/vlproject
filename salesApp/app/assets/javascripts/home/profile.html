@@ -5,7 +5,8 @@
       <h2>Phone: {{vm.user.phone}}</h2>
       <h2>Profile Type: {{vm.user.access_level}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">Zipcode: {{vm.user.zipcode}}</h2>
-      <h2 ng-show="vm.user.access_level === 'candidate'">LinkedIn: {{vm.user.linkedin}}</h2>
+      <h2 ng-show="vm.user.access_level === 'candidate'">LinkedIn URL: {{vm.user.linkedin}}</h2>
+      <h2 ng-show="vm.user.access_level === 'candidate'">Resume URL: {{vm.user.resume_url}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">College: {{vm.user.college}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">Major: {{vm.user.major}}</h2>
       <h2 ng-show="vm.user.access_level === 'candidate'">College Graduation Year: {{vm.user.college_graduation}}</h2>
@@ -23,6 +24,7 @@
   <p>Phone: <input type="text" name="phone" ng-model="vm.user.phone"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">Zipcode: <input type="text" name="zipcode" ng-model="vm.user.zipcode"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">Linkedin: <input type="url" name="linkedin" ng-model="vm.user.linkedin"></p><br>
+  <p ng-show="vm.user.access_level === 'candidate'">Resume: <input type="url" name="resume" ng-model="vm.user.resume_url"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">College: <input type="text" name="college" ng-model="vm.user.college"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">Major: <input type="text" name="major" ng-model="vm.user.major"></p><br>
   <p ng-show="vm.user.access_level === 'candidate'">College Graduation Year<input type="text" name="college_graduation" ng-model="vm.user.college_graduation"></p><br>
