@@ -1,6 +1,31 @@
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?rd5re8">
 
+<nav class="navbar navbar-inverse bg-inverse" role="navigation">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand navbar-brand-centered"><a class="headerLogo" style="color:gray;" href="/" ng-click="vm.changeLocation('#/')">Victory Lap</a></div>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-brand-centered">
+          <!-- <ul class="nav navbar-nav">
+            <li><a ng-show="!vm.user" ui-sref=".login">Login</a></li>
+            <li><a ng-show="!vm.user" ui-sref=".register">Register</a></li>
+            <li><a ng-show="!!vm.user" ng-click="vm.logout()">Logout</a></li>
+          </ul> -->
+          <ul class="nav navbar-nav navbar-right">
+         
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
   <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
@@ -8,8 +33,8 @@
 
 
   
-  <a class="btn btn-default btn-block login" href="/">Home</a>
-
+<!--   <a class="btn btn-default btn-block login" href="/">Home</a>
+ -->
   <div class="container">
     <div class="login-container">
             <div class="avatar"></div>
