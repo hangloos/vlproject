@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   get '/users', to: 'user#index'
 
+  post '/setupInterview', to: 'user#interview'
+
 end

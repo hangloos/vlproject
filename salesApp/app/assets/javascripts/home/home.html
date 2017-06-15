@@ -2,17 +2,16 @@
 <div ng-include="'home/login.html'" ng-show="!vm.user"></div>
 
 <div class="col-lg-8" ng-show="vm.location === '#/'">
+<img class="avatar">
   <h1 ng-show="vm.user">Welcome {{vm.user.first_name}} {{vm.user.last_name}}</h1>
-  <h3 ng-show="vm.user">User Type: {{vm.user.access_level}}</h3>
+  <!-- <h3 ng-show="vm.user">User Type: {{vm.user.access_level}}</h3> -->
+  <br></br>
   <p>Victory Lap finds, qualifies, and trains the next generation of top sellers, and helps employers hire better sales reps, faster. Whether you’re a young professional looking for for a better opportunity, or an employer looking to hire/train your new hires, Victory Lap is here to help.</p><br>
 
-  <hr>
-  <h2>For Employers</h2><br>
+  <h2>For Employers</h2>
   <p>Finding, hiring, and training entry-level sales reps is near impossible. There isn’t a good place to find them, training on “how to sell” takes too much time, and turnover is costly, ranging from 30%-50% of the first year salary. Victory Lap allows you to hire directly from our diverse candidate pool of already trained individuals in order to hire better sales reps, faster. Victory Lap also provides company training and outbound human capital opportunities for all of our employers.</p><br>
 
-  <hr>
-  <h2>For Job Candidates</h2><br>
-
+  <h2>For Job Candidates</h2>
   <p>There are over 14M sales jobs in the US today, yet less than 4% of colleges and universities offer any type of sales education. This leaves many individuals unqualified, unskilled, and unprepared for a career path that will provide personal, professional, and financial wealth. Whether you’re a recent graduate looking for your first sales job, a sales professional in-between jobs, or are looking to change careers, Victory Lap was designed for you.</p>
 </div>
 <ui-view></ui-view>

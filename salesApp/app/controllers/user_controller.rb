@@ -30,6 +30,14 @@ class UserController < ApplicationController
   end
 
 
+  def interview
+    @user = User.find(params[:user][:id])
+    @company = User.find(params[:company][:id])
+    InterviewSetup.interview_email(@user, @company).deliver
+
+  end
+
+
 
 
   private

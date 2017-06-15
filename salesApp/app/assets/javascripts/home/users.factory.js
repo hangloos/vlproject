@@ -8,15 +8,30 @@ angular
       updateUser: updateUser,
       getUsers: getUsers,
       setUser: setUser,
-      isLoggedIn: isLoggedIn
+      isLoggedIn: isLoggedIn,
+      setupInterview: setupInterview
     }
 
+    function setupInterview(user, company)  {
+      var req = {
+        method: 'POST',
+        url: '/setupInterview',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          user: user,
+          company: company
+        }
+      };
+      return $http(req)
+              .catch(handleError)
+    }
     function setUser(user)  {
       user = user
     }
 
     function isLoggedIn() {
-      debugger
       return(user)? localStorage.user : false
     }
 

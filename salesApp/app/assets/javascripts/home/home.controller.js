@@ -46,6 +46,9 @@
           return UsersFactory.updateUser(selectedUser.id, selectedUser)
         }
 
+        vm.setupInterview = function(user, company) {
+          return UsersFactory.setupInterview(user, company)
+        }
         
 
 
