@@ -4,7 +4,7 @@
 
 angular
         .module('app')
-        .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
             $stateProvider
                 .state('home', {
                     url: '/',
@@ -35,9 +35,9 @@ angular
           // $locationProvider.html5Mode(false);
 
 
-              })
+              }])
 
-        .run(function($rootScope, UsersFactory, $location) {
+        .run(['$rootScope', 'UsersFactory', '$location', function($rootScope, UsersFactory, $location) {
             $rootScope.$on("$locationChangeStart", function(event) {
                 if(!localStorage.user)  {
                     console.log('deny')
@@ -45,7 +45,7 @@ angular
                     $location.path('/')
                 } 
             })
-        })
+        }])
 
 
 
