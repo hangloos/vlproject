@@ -4,7 +4,7 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController)
+        .controller('HomeController', ['Auth', '$rootScope', '$location', '$http', 'UsersFactory', 'ModalService', HomeController ])
 
    function HomeController(Auth, $rootScope, $location, $http, UsersFactory, ModalService) {
         
