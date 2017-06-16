@@ -2,6 +2,8 @@ angular
   .module('app')
   .factory('UsersFactory', UsersFactory)
 
+  UsersFactory.$inject = ['$stateParams', '$http'];
+
   function UsersFactory($stateParams, $http) {
     var user;
     return {
