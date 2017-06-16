@@ -12,6 +12,10 @@ a.headerLogo:hover {
 }
 
 
+.notice{
+    color: blue;
+    text-align: center;
+}
 
 .login-container{
     position: relative;

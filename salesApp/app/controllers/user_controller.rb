@@ -11,6 +11,8 @@ class UserController < ApplicationController
 
   def create 
     @user = User.new(user_params)
+    @user.first_name = @user.first_name.capitalize
+    @user.last_name = @user.last_name.capitalize
     if check_admin? && @user.save
       redirect_to "/RegisterAdminSecretPage"
       flash[:notice] = 'Successfully Created User'
@@ -22,7 +24,6 @@ class UserController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    
       if user.update(user_params.reject{|_, v| v.blank?})
         render json: {status: 'ok'}
       else
