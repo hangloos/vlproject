@@ -1,0 +1,34 @@
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+      </div>
+          <div class="modal-body">
+          <div class="form-group">
+        <h2>Graduated?</h2>
+        <input class="form-control" type="radio" ng-model="vm.selectedUser.graduated" value="true">Yes
+        <input class="form-control" type="radio" ng-model="vm.selectedUser.graduated" value="false">No
+
+        </div>
+        <div class="form-group">
+        <h2>Hired?</h2>
+        <input class="form-control" type="radio" ng-model="vm.selectedUser.hired" value="true">Yes
+        <input class="form-control" type="radio" ng-model="vm.selectedUser.hired" value="false">No
+
+        </div>
+        <div class="form-group">
+        <textarea rows="2" class="form-control" placeholder="Add Notes" ng-model="vm.selectedUser.notes"></textarea>
+    
+        
+        </div>
+      </div>
+          <div class="modal-footer ">
+        <button type="button" class="btn btn-success btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign" ng-click="vm.updateUser(vm.selectedUser)"></span> Update</button>
+      </div>
+        </div>
+   
+  </div>
+     
+</div>
