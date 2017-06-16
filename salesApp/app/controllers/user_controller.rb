@@ -14,6 +14,7 @@ class UserController < ApplicationController
     @user.first_name = @user.first_name.capitalize
     @user.last_name = @user.last_name.capitalize
     if check_admin? && @user.save
+      InterviewSetup.signup_email(@user).deliver
       redirect_to "/RegisterAdminSecretPage"
       flash[:notice] = 'Successfully Created User'
     else

@@ -9,4 +9,12 @@ class InterviewSetup < ApplicationMailer
    end
 
 
+   def signup_email(user)
+      @user = user
+      @url  = 'http://www.gmail.com'
+      mail(to: 'ericloos00@gmail.com', bcc: 'ericloos00@gmail.com', cc: 'ericloos00@gmail.com', subject: 'Sign Up Confirmation - Victory Lap Portal')
+      # to: @user.email , bcc: 'brian and kevin', cc: @company.email, from: info@victorylap.io
+   end
+
+
 end
