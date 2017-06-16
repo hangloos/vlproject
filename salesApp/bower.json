@@ -9,8 +9,5 @@
       "angular-devise": "latest",
       "angular-modal-service": "latest"
     }
-  }, 
-  "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
   }
 }
