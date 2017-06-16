@@ -4,7 +4,7 @@ class InterviewSetup < ApplicationMailer
       @user = user
       @company = company
       @url  = 'http://www.gmail.com'
-      mail(to: @user.email, bcc: 'brian@victorylap.io', cc: @company.email, subject: 'A Victory Lap Partner Wants To Start Talking!')
+      mail(to: @user.email, cc: 'brian@victorylap.io', cc: @company.email, subject: 'A Victory Lap Partner Wants To Start Talking!')
       # to: @user.email , bcc: 'brian and kevin', cc: @company.email, from: info@victorylap.io
    end
 
