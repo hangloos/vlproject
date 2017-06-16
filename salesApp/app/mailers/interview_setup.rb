@@ -4,7 +4,7 @@ class InterviewSetup < ApplicationMailer
       @user = user
       @company = company
       @url  = 'http://www.gmail.com'
-      mail(to: 'ericloos00@gmail.com', bcc: 'ericloos00@gmail.com', cc: 'ericloos00@gmail.com', subject: 'A Victory Lap Partner Wants To Start Talking!')
+      mail(to: @user.email, bcc: 'brian@victorylap.io', cc: @company.email, subject: 'A Victory Lap Partner Wants To Start Talking!')
       # to: @user.email , bcc: 'brian and kevin', cc: @company.email, from: info@victorylap.io
    end
 
@@ -12,7 +12,7 @@ class InterviewSetup < ApplicationMailer
    def signup_email(user)
       @user = user
       @url  = 'http://www.gmail.com'
-      mail(to: 'ericloos00@gmail.com', bcc: 'ericloos00@gmail.com', cc: 'ericloos00@gmail.com', subject: 'Sign Up Confirmation - Victory Lap Portal')
+      mail(to: @user.email, cc: 'brian@victorylap.io', subject: 'Sign Up Confirmation - Victory Lap Portal')
       # to: @user.email , bcc: 'brian and kevin', cc: @company.email, from: info@victorylap.io
    end
 
