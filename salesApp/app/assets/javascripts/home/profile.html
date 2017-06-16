@@ -17,18 +17,18 @@
   <div class="col-md-6">
 <form ng-show="showEditProfileForm">
   <h2>Edit Profile</h2>
-  <p>First Name: <input type="text" name="first_name" ng-model="vm.user.first_name"></p><br>
-  <p>Last Name: <input type="text" name="last_name" ng-model="vm.user.last_name"></p><br>
-  <p ng-show="vm.user.access_level === 'company_admin'">Company: <input type="text" name="company" ng-model="vm.user.company"></p><br>
-  <p>Email: <input type="email" name="email" ng-model="vm.user.email"></p><br>
+  <p>First Name: <input type="text" name="first_name" ng-model="vm.user.first_name"></p>
+  <p>Last Name: <input type="text" name="last_name" ng-model="vm.user.last_name"></p>
+  <p ng-show="vm.user.access_level === 'company_admin'">Company: <input type="text" name="company" ng-model="vm.user.company"></p>
+  <p>Email: <input type="email" name="email" ng-model="vm.user.email"></p>
   <p>Password: <input type="password" name="password" ng-model="vm.user.password"></p>
-  <p>Phone: <input type="text" name="phone" ng-model="vm.user.phone"></p><br>
-  <p ng-show="vm.user.access_level === 'candidate'">Zipcode: <input type="text" name="zipcode" ng-model="vm.user.zipcode"></p><br>
-  <p ng-show="vm.user.access_level === 'candidate'">Linkedin: <input type="url" name="linkedin" ng-model="vm.user.linkedin"></p><br>
-  <p ng-show="vm.user.access_level === 'candidate'">Resume: <input type="url" name="resume" ng-model="vm.user.resume_url"></p><br>
-  <p ng-show="vm.user.access_level === 'candidate'">College: <input type="text" name="college" ng-model="vm.user.college"></p><br>
-  <p ng-show="vm.user.access_level === 'candidate'">Major: <input type="text" name="major" ng-model="vm.user.major"></p><br>
-  <p ng-show="vm.user.access_level === 'candidate'">College Graduation Year<input type="text" name="college_graduation" ng-model="vm.user.college_graduation"></p><br>
+  <p>Phone: <input type="text" name="phone" ng-model="vm.user.phone"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Zipcode: <input type="text" name="zipcode" ng-model="vm.user.zipcode"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Linkedin: <input type="url" name="linkedin" ng-model="vm.user.linkedin"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Resume: <input type="url" name="resume" ng-model="vm.user.resume_url"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">College: <input type="text" name="college" ng-model="vm.user.college"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Major: <input type="text" name="major" ng-model="vm.user.major"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">College Graduation Year<input type="text" name="college_graduation" ng-model="vm.user.college_graduation"></p>
   <p ng-show="vm.user.access_level === 'candidate'">Currently Employed: <input type="radio" name="graduated" value="true" ng-model="vm.user.hired">True <input type="radio" name="graduated" value="false" ng-model="vm.user.hired">False</p>
   <button type="submit" class="btn btn-default" ng-click="vm.editUser(vm.user.id, vm.user)">Save Edit</button>
 </form>
