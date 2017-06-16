@@ -17,6 +17,7 @@ gem 'active_model_serializers'
 
 gem 'bower-rails'
 
+gem 'angularjs-rails'
 gem 'angular-rails-templates'
 
 gem 'devise'
