@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                <form ng-submit="vm.login()">
+                    <input name="user" type="email" placeholder="Email" ng-model="vm.userForm.email" required>
+                    <div class="password">
+                        <input type="password" id="passwordfield" ng-model="vm.userForm.password" required placeholder="password">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </div>
+                    <button class="btn btn-block login" name="loginForm" type="submit">Login</button>
+                </form>
+            </div>
+        </div>       
+</div>
+
