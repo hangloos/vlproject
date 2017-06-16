@@ -12,10 +12,11 @@ class UserController < ApplicationController
   def create 
     @user = User.new(user_params)
     if check_admin? && @user.save
-        redirect_to 'RegisterAdminSecretPage'
-    else 
+      redirect_to "/RegisterAdminSecretPage"
+      flash[:notice] = 'Successfully Created User'
+    else
+    redirect_to "/RegisterAdminSecretPage" 
       flash[:notice] = @user.errors.full_messages
-      redirect_to 'RegisterAdminSecretPage'
     end
   end
 
