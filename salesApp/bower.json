@@ -1,5 +1,4 @@
 {
-  "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
       "angular": "v1.5.8",
@@ -8,6 +7,5 @@
       "bootstrap": "latest",
       "angular-devise": "latest",
       "angular-modal-service": "latest"
-    }
   }
 }
