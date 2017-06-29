@@ -3,7 +3,7 @@ class InterviewSetup < ApplicationMailer
   def interview_email(user,company)
       @user = user
       @company = company
-      ccrecipients = ['ericloos00@gmail.com', 'ericloos00@gmail.com']
+      ccrecipients = ['ericloos00@gmail.com', 'thosemovieguys1@gmail.com']
       @url  = 'http://www.gmail.com'
       mail(to: 'ericloos00@gmail.com', cc: ccrecipients, subject: 'A Victory Lap Partner Wants To Start Talking!')
       # to: @user.email , bcc: 'brian and kevin', cc: @company.email, from: info@victorylap.io
