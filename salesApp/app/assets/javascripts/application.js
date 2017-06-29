@@ -17,5 +17,8 @@
 //= require angular-rails-templates
 //= require bootstrap
 //= require angular-modal-service
+//= require ng-file-upload
+//= require ng-img-crop
+//= require angular-base64-upload
 //= require moment
 //= require_tree .

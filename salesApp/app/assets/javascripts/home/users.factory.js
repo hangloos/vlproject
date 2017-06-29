@@ -12,8 +12,25 @@ angular
       setUser: setUser,
       isLoggedIn: isLoggedIn,
       setupInterview: setupInterview,
-      deleteUser: deleteUser
+      deleteUser: deleteUser,
+      CreateAvatar: CreateAvatar
     }
+
+
+    function CreateAvatar(data){
+      var req = {
+        method: 'POST',
+        url: '/avatars',
+        data: {avatar:data},
+        headers: {
+       'Content-Type': 'application/json'
+     }
+    }
+    return $http(req)
+    .then(handleResponse)
+    .catch(handleError)
+  }
+
 
     function setupInterview(user, company)  {
       var req = {
@@ -75,11 +92,13 @@ angular
 
 
     function handleResponse(response) {
+        console.log(response)
         return response.data
 
       }
 
       function handleError(response)  {
+        console.log(response)
         return response.data
 
       }

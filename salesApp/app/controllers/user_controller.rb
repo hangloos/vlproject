@@ -46,6 +46,19 @@ class UserController < ApplicationController
     InterviewSetup.interview_email(@user, @company).deliver
   end
 
+  def picture
+    @user = current_user
+  end
+
+  def avatar_add
+    user = current_user
+    if user.update(user_params.reject{|_, v| v.blank?})
+        redirect_to '/#/profile'
+      else
+        render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+      end
+  end
+
 
 
 
@@ -56,6 +69,6 @@ class UserController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:id, :password, :first_name, :resume_url, :notes, :last_name, :access_level, :email, :phone, :zipcode, :linkedin, :college, :major, :college_graduation, :company, :graduated, :hired)
+    params.require(:user).permit(:id, :password, :avatar, :first_name, :resume_url, :notes, :last_name, :access_level, :email, :phone, :zipcode, :linkedin, :college, :major, :college_graduation, :company, :graduated, :hired)
   end
 end

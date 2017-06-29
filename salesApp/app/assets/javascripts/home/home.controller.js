@@ -5,10 +5,11 @@
     angular
         .module('app')
         .controller('HomeController', HomeController)
+        // .controller('HomeController',['Auth', '$rootScope', '$timeout', '$location', '$http', 'UsersFactory', 'ModalService','Upload', function(Auth, $timeout, $rootScope, $location, $http, UsersFactory, ModalService, Upload) {
 
-        HomeController.$inject = [ 'Auth', '$rootScope', '$location', '$http', 'UsersFactory', 'ModalService' ];
+        HomeController.$inject = ['Auth', '$rootScope', '$timeout', '$location', '$http', 'UsersFactory', 'ModalService', 'Upload'];
 
-   function HomeController(Auth, $rootScope, $location, $http, UsersFactory, ModalService) {
+   function HomeController(Auth, $rootScope, $location, $timeout, $http, UsersFactory, ModalService, Upload) {
         
         var vm = this
         vm.logout = Auth.logout
@@ -18,8 +19,40 @@
         vm.changeLocation = changeLocation
         vm.editUser = editUser
         vm.getUsers = getUsers
+        vm.upload = upload
 
         getUsers();
+
+        vm.avatar = {};
+
+        function upload(){
+          UsersFactory.CreateAvatar(vm.avatar)
+            .then(function (res)  {
+              
+            })
+        }
+
+//         function upload(file, errFiles)  {
+//         this.f = file;
+//         this.errFile = errFiles && errFiles[0];
+//         if (file) {
+//             file.upload = Upload.upload({
+//                 url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+//                 data: {file: file}
+//             });
+
+//             file.upload.then(function (response) {
+//               debugger
+              
+//             }, function (response) {
+//                 if (response.status > 0)
+//                     this.errorMsg = response.status + ': ' + response.data;
+//             }, function (evt) {
+//                 file.progress = Math.min(100, parseInt(100.0 * 
+//                                          evt.loaded / evt.total));
+//             });
+//         }  
+// }
 
         function changeLocation(location) {
           vm.location = location

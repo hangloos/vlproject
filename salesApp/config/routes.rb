@@ -16,4 +16,8 @@ Rails.application.routes.draw do
 
   delete '/user/:id', to: 'user#destroy'
 
+  get '/users/avatar', to: 'user#picture'
+
+  patch '/users/avatar/add', to: 'user#avatar_add'
+
 end

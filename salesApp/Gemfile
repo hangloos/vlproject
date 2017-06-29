@@ -27,6 +27,8 @@ gem 'angular-ui-router-rails'
 
 gem 'devise'
 
+gem "paperclip", "~> 5.0.0"
+
 gem 'figaro'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'

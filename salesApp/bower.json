@@ -1,13 +1,14 @@
 {
-  "vendor": {
-    "name": "bower-rails generated vendor assets",
-    "dependencies": {
-      "angular": "v1.5.8",
-      "angular-ui-router": "latest",
-      "moment": "latest",
-      "bootstrap": "latest",
-      "angular-devise": "latest",
-      "angular-modal-service": "latest"
-    }
+  "name": "bower-rails generated vendor assets",
+  "dependencies": {
+    "angular": "v1.5.8",
+    "angular-ui-router": "latest",
+    "moment": "latest",
+    "bootstrap": "latest",
+    "angular-devise": "latest",
+    "angular-modal-service": "latest",
+    "ng-file-upload": "latest",
+    "ng-img-crop": "ngImgCrop#^0.3.2",
+    "angular-base64-upload": "^0.1.22"
   }
 }
