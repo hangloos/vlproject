@@ -9,6 +9,7 @@
             <div class="form-box">
                 <form ng-submit="vm.createJob(jobModel)">
                     <input placeholder="Title" class="row form-group" type="text" name="title" ng-model="jobModel.title">
+                    <input placeholder="Company Name" class="row form-group" type="text" name="company_name" ng-model="jobModel.company_name">
                     <textarea class="row form-group" placeholder="Description" rows="6" cols="30" name="description" ng-model="jobModel.description"></textarea>
                     <textarea placeholder="Qualifications" class="row form-group" rows="6" cols="30" name="qualifications" ng-model="jobModel.qualifications"></textarea>
                     <textarea placeholder="Benefits" class="row form-group" rows="6" cols="30" name="benefits" ng-model="jobModel.benefits"></textarea>
@@ -36,6 +37,7 @@
                                        
                                        <thead>
                                         <th>Title</th>
+                                        <th>Company</th>
                                         <th>Description</th>
                                         <th>Qualifications</th>
                                         <th>Benefits</th>
@@ -47,6 +49,7 @@
                         
                                         <tr>
                                         <td id="truncate-text">{{job.title}}</td>
+                                        <td id="truncate-text">{{job.company_name}}</td>
                                         <td id="truncate-text">{{job.description}}</td>
                                         <td id="truncate-text">{{job.qualifications}}</td>
                                         <td id="truncate-text">{{job.benefits}}</td>

@@ -1,6 +1,6 @@
 <div class="container" style="background-color: lightgreen;padding: 2%">
   <div class="col-lg-10 text-center">
-    <h2>Company: {{vm.jobShow.user.company}}</h2>
+    <h2>Company: {{vm.jobShow.company_name}}</h2>
     <h4>Title: {{vm.jobShow.title}}</h4>
     <input ng-show="showEdit" placeholder="Title" class="row form-group" type="text" name="title" ng-model="vm.jobShow.title">
     <button ng-show="vm.user.access_level === 'company_admin'" ng-click="showEdit = !showEdit" class="btn btn-primary">Edit</button>

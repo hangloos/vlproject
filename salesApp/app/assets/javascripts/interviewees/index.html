@@ -6,39 +6,19 @@
               <table id="mytable" cellspacing="1" class="table">
                                  
                                  <thead>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Graduated?<select ng-model="searchBox.graduated">
-                                                    <option value="true">Yes</option>
-                                                    <option value="false">No</option>
-                                                    <option value=""></option>
-                                                  </select></th>
-                                  <th>Hired?<select ng-model="searchBox.hired">
-                                                    <option value="true">Yes</option>
-                                                    <option value="false">No</option>
-                                                    <option value=""></option>
-                                                  </select></th></th>
-                                  <th>Linkedin</th>
-                                  <th>Resume</th>
-                                  <th>College<select ng-model="searchBox.college" ng-options="user.college for user in vm.users | unique:'college'"><option value=""></option>
-                                                    </select></th>
-                                  <th>Graduation Year<select ng-model="searchBox.graduation" ng-options="user.college_graduation for user in vm.users | unique: 'college_graduation'"><option value=""></option>
-                                                    </select></th>
-                                  <th>Major<select ng-model="searchBox.major" ng-options="user.major for user in vm.users | unique:'major'"><option value=""></option>
-                                                    </select></th>
+                                  <th>User Id</th>
+                                  <th>Job Id</th>
+                                  <th>Title</th>
+                                  <th>Company</th>
+  
                                  </thead>
                   <tbody ng-repeat="int in vm.interviewees">
                   
                                   <tr>
                                   <td>{{int.user_id}}</td>
-                                  <td>{{user.last_name}}</td>
-                                  <td>{{user.graduated ? 'Yes' : 'No'}}</td>
-                                  <td>{{user.hired ? 'Yes' : 'No'}}</td>
-                                  <td><a href="{{user.linkedin}}" target="_blank">Linkedin</a></td>
-                                  <td><a href="{{user.resume_url}}" target="_blank">Resume</a></td>
-                                  <td>{{user.college}}</td>
-                                  <td>{{user.college_graduation}}</td>
-                                  <td>{{user.major}}</td>
+                                  <td>{{int.job_id}}</td>
+                                  <td>{{int.job.title}}</td>
+                                  <td>{{int.job.company_name}}</td>
                             
                   
                   </tbody>
