@@ -40,6 +40,11 @@ angular
                     templateUrl: 'jobs/jobs_show.html',
                     controller: 'HomeController as vm'
                 })
+                .state('home.interviewees', {
+                    url: 'interviewees',
+                    templateUrl: 'interviewees/index.html',
+                    controller: 'HomeController as vm'
+                })
 
                 $urlRouterProvider.otherwise('/');
           // $locationProvider.html5Mode(false);

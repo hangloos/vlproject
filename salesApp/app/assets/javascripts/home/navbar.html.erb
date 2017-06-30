@@ -21,6 +21,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a ng-show="vm.user.access_level === 'super_admin'" href="/#/users" ng-click="vm.getUsers(); vm.changeLocation('#/users')">Users</a></li>
             <li><a ng-show="vm.user.access_level === 'super_admin'" href="/RegisterAdminSecretPage">Register Users</a></li>
+            <li><a ng-show="vm.user.access_level === 'company_admin' || vm.user.access_level === 'super_admin'" href="/#/interviewees" ng-click="vm.changeLocation('#/interviewees')">Interviewees</a></li>
             <li><a ng-show="vm.user.access_level === 'company_admin' || vm.user.access_level === 'super_admin'" href="/#/candidates" ng-click="vm.changeLocation('#/candidates')">Candidates</a></li>
             <li><a ng-show="vm.user.access_level === 'company_admin' || vm.user.access_level === 'super_admin'" href="/#/jobs" ng-click="vm.changeLocation('#/jobs')">Jobs</a></li>
             <li><a ng-show="!!vm.user" ui-sref=".profile" ng-click="vm.changeLocation('#/profile')">Profile</a></li>
