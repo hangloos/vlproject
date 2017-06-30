@@ -33,7 +33,12 @@ angular
                 .state('home.jobs', {
                     url: 'jobs',
                     templateUrl: 'jobs/jobs.html',
-                    controller: 'JobsController as vm'
+                    controller: 'HomeController as vm'
+                })
+                .state('home.jobShow', {
+                    url: 'job/:id',
+                    templateUrl: 'jobs/jobs_show.html',
+                    controller: 'HomeController as vm'
                 })
 
                 $urlRouterProvider.otherwise('/');

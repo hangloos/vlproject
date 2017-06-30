@@ -12,6 +12,17 @@ class JobsController < ApplicationController
     user.save
   end
 
+  def destroy
+    job = Job.find(params[:id])
+    if current_user.access_level == "company_admin"
+      job.delete
+    end
+  end
+
+  def show
+    render json: Job.find(params[:id])
+  end
+
 
 
 

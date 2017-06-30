@@ -46,6 +46,10 @@ class UserController < ApplicationController
     InterviewSetup.interview_email(@user, @company).deliver
   end
 
+  def show
+    render json: User.eager_load(:jobs).find(current_user.id)
+  end
+
 
 
   private

@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 outlineJob">
         <h4>Candidates</h4>
         <div class="table-responsive">
-              <table id="mytable" cellspacing="10" class="table table-bordred table-striped">
+              <table id="mytable" cellspacing="10" class="table table-hover">
                                  
                                  <thead>
                                   <th>First Name</th>
@@ -11,18 +11,20 @@
                                   <th>Graduated?<select ng-model="searchBox.graduated">
                                                     <option value="true">Yes</option>
                                                     <option value="false">No</option>
+                                                    <option value=""></option>
                                                   </select></th>
                                   <th>Hired?<select ng-model="searchBox.hired">
                                                     <option value="true">Yes</option>
                                                     <option value="false">No</option>
+                                                    <option value=""></option>
                                                   </select></th></th>
                                   <th>Linkedin</th>
                                   <th>Resume</th>
-                                  <th>College<select ng-model="searchBox.college" ng-options="user.college for user in vm.users | unique:'college'">
+                                  <th>College<select ng-model="searchBox.college" ng-options="user.college for user in vm.users | unique:'college'"><option value=""></option>
                                                     </select></th>
-                                  <th>Graduation Year<select ng-model="searchBox.graduation" ng-options="user.college_graduation for user in vm.users | unique: 'college_graduation'">
+                                  <th>Graduation Year<select ng-model="searchBox.graduation" ng-options="user.college_graduation for user in vm.users | unique: 'college_graduation'"><option value=""></option>
                                                     </select></th>
-                                  <th>Major<select ng-model="searchBox.major" ng-options="user.major for user in vm.users | unique:'major'">
+                                  <th>Major<select ng-model="searchBox.major" ng-options="user.major for user in vm.users | unique:'major'"><option value=""></option>
                                                     </select></th>
                                  </thead>
                   <tbody ng-repeat="user in vm.users | orderBy: '-created_at' | filter:{access_level: 'candidate'} | filter:searchBox.graduated | filter:searchBox.hired | filter:searchBox.graduation | filter:searchBox.college | filter:searchBox.major">

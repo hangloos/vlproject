@@ -6,10 +6,11 @@ angular
 
   function JobsFactory($stateParams, $http) {
 
-    var user;
     return {
       createJob: createJob,
-      getJobs: getJobs
+      getJobs: getJobs,
+      deleteJob: deleteJob,
+      getJob: getJob
 
     }
 
@@ -36,6 +37,26 @@ angular
           return $http.get('/jobs')
               .then(handleResponse)
               .catch(handleError)
+        }
+
+
+        function getJob(id) {
+          return $http.get('/jobs/' + id)
+                    .then(handleResponse)
+                    .catch(handleError)
+        }
+
+
+        function deleteJob(job) {
+          var req = {
+        method: 'DELETE',
+        url: '/jobs/' + job.id,
+        headers: {
+            'Content-Type': 'application/json'
+          }
+      }
+      return $http(req)
+                  .catch(handleError)
         }
     
       function handleResponse(response) {

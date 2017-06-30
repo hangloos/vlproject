@@ -35,9 +35,9 @@
         .module('app')
         .controller('HomeController', HomeController)
 
-    HomeController.$inject = [ 'Auth', '$rootScope', '$location', '$http', 'UsersFactory', 'ModalService' ];
+    HomeController.$inject = [ 'Auth', '$stateParams', '$rootScope', '$location', '$http', 'UsersFactory', 'ModalService', 'JobsFactory' ];
 
-   function HomeController(Auth, $rootScope, $location, $http, UsersFactory, ModalService) {
+   function HomeController(Auth, $stateParams, $rootScope, $location, $http, UsersFactory, ModalService, JobsFactory) {
         
         var vm = this
         vm.logout = Auth.logout
@@ -47,8 +47,19 @@
         vm.changeLocation = changeLocation
         vm.editUser = editUser
         vm.getUsers = getUsers
+        vm.createJob = createJob
+        vm.getJobs = getJobs
+        vm.deleteJob = deleteJob
+        vm.getJobShow = getJobShow
+        vm.setJobShow = setJobShow
 
+
+        if (!!$stateParams.id) {
+          getJobShow($stateParams.id);
+
+        }
         getUsers();
+        getJobs();
 
         function changeLocation(location) {
           vm.location = location
@@ -87,6 +98,41 @@
                             .then(getUsers)
         }
 
+        // Jobs
+
+        function getJobs() {
+            return JobsFactory.getJobs()
+                    .then(setJobs)
+          }
+
+          function setJobs(data) {
+            vm.jobs = data
+          }
+
+
+          function createJob(data) {
+            return JobsFactory.createJob(data, JSON.parse(localStorage.user))
+                                  .then(getJobs)
+          }
+
+          function deleteJob(job, user) {
+            return JobsFactory.deleteJob(job)
+                            .then(getJobs)
+          }
+
+          vm.modalJob = function (job)  {
+          vm.selectedJob = job
+          }
+
+          function getJobShow(id) {
+            return JobsFactory.getJob(id)
+                        .then(setJobShow)
+
+          }
+
+          function setJobShow(data) {
+            vm.jobShow = data
+          }
 
 
 
