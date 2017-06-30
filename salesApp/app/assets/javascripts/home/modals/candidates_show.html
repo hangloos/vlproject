@@ -3,14 +3,19 @@
     <div class="modal-content">
           <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">{{vm.selectedUser.first_name}} {{vm.selectedUser.last_name}}</h4>
-        <p >{{vm.selectedUser.email}}</p>
-        <p>{{vm.selectedUser.phone</p>
+        <h4 class="text-center">{{vm.selectedUser.first_name}} {{vm.selectedUser.last_name}}</h4>
+        <p class="text-center">{{vm.selectedUser.email}}, {{vm.selectedUser.phone}}</p>
+        <br>
+        <p>Currently Reading: {{vm.user.books}}</p>
+        <p>Favorite Book: {{vm.user.fav_book}}</p>
+        <p>Favorite Food: {{vm.user.food}}</p>
+        <p>Hobbies: {{vm.user.hobbies}}</p>
+        <p>My Idol: {{vm.user.idol}}</p>
+        <!-- <button class="btn btn-primary">Add Your Notes</button> -->
       </div>
           <div class="modal-body">
-            <h3>Notes: {{vm.selectedUser.notes}}</h3>
-            <h3>Any more details we want to add privately....</h3>
-            <button class="btn btn-success">Interview</button>
+            <h3>Victory Lap's Notes: {{vm.selectedUser.notes}}</h3>
+            <button class="btn btn-success" ng-click="vm.setupInterview(user, vm.user)" ng-really-message="Are you sure you want to interview this candidate? This will send a direct email to them."? ng-really-click="takeAction()">Interview</button>
           </div>
       </div>
   </div>
