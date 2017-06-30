@@ -2,19 +2,30 @@
   <div class="col-lg-10 text-center">
     <h2>Company: {{vm.jobShow.user.company}}</h2>
     <h4>Title: {{vm.jobShow.title}}</h4>
+    <input ng-show="showEdit" placeholder="Title" class="row form-group" type="text" name="title" ng-model="vm.jobShow.title">
+    <button ng-show="vm.user.access_level === 'company_admin'" ng-click="showEdit = !showEdit" class="btn btn-primary">Edit</button>
     <br>
     <div class="col-lg-10 text-left outlineJob">
       <h3>Job Description</h3>
       <p>{{vm.jobShow.description}}</p>
+      <textarea ng-show="showEdit" class="row form-group" placeholder="Description" rows="6" cols="30" name="description" ng-model="vm.jobShow.description"></textarea>
       <br>
       <h3>Qualifications</h3>
       <p>{{vm.jobShow.qualifications}}</p>
+      <textarea ng-show="showEdit" placeholder="Qualifications" class="row form-group" rows="6" cols="30" name="qualifications" ng-model="vm.jobShow.qualifications"></textarea>
       <br>
       <h3>Benefits</h3>
       <p>{{vm.jobShow.benefits}}</p>
+      <textarea ng-show="showEdit" placeholder="Benefits" class="row form-group" rows="6" cols="30" name="benefits" ng-model="vm.jobShow.benefits"></textarea>
       <br>
       <h3>Salary</h3>
       <p>{{vm.jobShow.salary}}</p>
+      <input  ng-show="showEdit" placeholder="Salary" class="row form-group" type="text" name="salary" ng-model="vm.jobShow.salary">
+      <br>
+      <h3>URL</h3>
+      <p>{{vm.jobShow.url}}</p>
+      <input ng-show="showEdit" placeholder="URL" ng-model="vm.jobShow.url" class="row form-group" type="url" name="url"><br>
+      <button class="btn btn-success" ng-show="showEdit" ng-click="vm.editJob(vm.jobShow)">Save Edit</button>
     </div>
   </div>
 </div>
