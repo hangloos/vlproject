@@ -44,6 +44,7 @@ class UserController < ApplicationController
     user = User.find(params[:user][:id])
     company = User.find(params[:company][:id])
     jobId = params[:job]
+    Interviewee.create(user_id: user.id, job_id: jobId)
     InterviewSetup.interview_email(user, company, jobId).deliver
   end
 
