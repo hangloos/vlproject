@@ -23,8 +23,14 @@ class JobsController < ApplicationController
     render json: Job.find(params[:id])
   end
 
-
-
+  def update
+    job = Job.find(params[:job][:id])
+      if job.update(jobs_params.reject{|_, v| v.blank?})
+        render json: {status: 'ok'}
+      else
+        render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+      end
+  end
 
   private
 

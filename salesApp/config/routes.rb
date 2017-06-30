@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
   delete '/jobs/:id', to: 'jobs#destroy'
 
+  patch '/jobs/:id', to: 'jobs#update'
+
 end

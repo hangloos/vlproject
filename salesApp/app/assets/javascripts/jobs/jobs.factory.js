@@ -10,11 +10,27 @@ angular
       createJob: createJob,
       getJobs: getJobs,
       deleteJob: deleteJob,
-      getJob: getJob
+      getJob: getJob,
+      updateJob: updateJob
 
     }
 
 
+    function updateJob(job) {
+      var req = {
+        method: 'PATCH',
+        url: '/jobs/' + job.id,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          job: job
+        }
+      }
+      return $http(req)
+          .catch(handleError)
+
+    }
     function createJob(data,user) {
 
         var req = {

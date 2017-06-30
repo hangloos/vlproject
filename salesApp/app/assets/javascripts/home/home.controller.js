@@ -52,6 +52,7 @@
         vm.deleteJob = deleteJob
         vm.getJobShow = getJobShow
         vm.setJobShow = setJobShow
+        vm.editJob = editJob
 
 
         if (!!$stateParams.id) {
@@ -132,6 +133,11 @@
 
           function setJobShow(data) {
             vm.jobShow = data
+          }
+
+          function editJob(job) {
+            return JobsFactory.updateJob(job)
+                                .then($route.reload())
           }
 
 
