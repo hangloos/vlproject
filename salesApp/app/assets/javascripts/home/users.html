@@ -10,6 +10,7 @@
                     <table id="mytable" cellspacing="10" class="table">
                                        
                                        <thead>
+                                        <th>ID</th>
                                         <th>First Name</th>
                                         <th>Last Name</th>
                                         <th>Email</th>
@@ -21,6 +22,7 @@
                         <tbody ng-repeat="user in vm.users | orderBy: '-created_at' | filter:searchBox">
                         
                                         <tr>
+                                        <td>{{user.id}}</td>
                                         <td>{{user.first_name}}</td>
                                         <td>{{user.last_name}}</td>
                                         <td>{{user.email}}</td>
