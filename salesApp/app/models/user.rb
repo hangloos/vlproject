@@ -10,4 +10,5 @@ class User < ApplicationRecord
   enum access_level: [:candidate, :company_admin, :super_admin]
 
   has_many :jobs
+  
 end

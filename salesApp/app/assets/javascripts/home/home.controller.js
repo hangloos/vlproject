@@ -89,8 +89,8 @@
     
         }
 
-        vm.setupInterview = function(user, company) {
-          return UsersFactory.setupInterview(user, company)
+        vm.setupInterview = function(user, company, job) {
+          return UsersFactory.setupInterview(user, company, job)
         }
         
         vm.deleteUser = function(user)  {
