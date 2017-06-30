@@ -30,6 +30,10 @@ angular
                     url:'candidates',
                     templateUrl: 'home/candidates.html'
                 })
+                .state('home.jobs', {
+                    url: 'jobs',
+                    templateUrl: 'home/jobs.html'
+                })
 
                 $urlRouterProvider.otherwise('/');
           // $locationProvider.html5Mode(false);

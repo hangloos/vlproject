@@ -8,4 +8,6 @@ class User < ApplicationRecord
   # you can also explicitly define enum as:  enum access_level: [:candidate => 0, :company_admin => 1, :super_admin => 2}
 
   enum access_level: [:candidate, :company_admin, :super_admin]
+
+  has_many :jobs
 end
