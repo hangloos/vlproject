@@ -16,7 +16,7 @@ angular
       deleteUser: deleteUser
     }
 
-    function setupInterview(user, company)  {
+    function setupInterview(user, company, job)  {
       var req = {
         method: 'POST',
         url: '/setupInterview',
@@ -25,7 +25,8 @@ angular
         },
         data: {
           user: user,
-          company: company
+          company: company,
+          job: job
         }
       };
       return $http(req)
