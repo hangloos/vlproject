@@ -27,10 +27,10 @@
                                   <th>Major<select ng-model="searchBox.major" ng-options="user.major for user in vm.users | unique:'major'"><option value=""></option>
                                                     </select></th>
                                  </thead>
-                  <tbody ng-repeat="user in vm.users | orderBy: '-created_at' | filter:{access_level: 'candidate'} | filter:searchBox.graduated | filter:searchBox.hired | filter:searchBox.graduation | filter:searchBox.college | filter:searchBox.major">
+                  <tbody ng-repeat="int in vm.interviewees">
                   
                                   <tr>
-                                  <td>{{user.first_name}}</td>
+                                  <td>{{int.user_id}}</td>
                                   <td>{{user.last_name}}</td>
                                   <td>{{user.graduated ? 'Yes' : 'No'}}</td>
                                   <td>{{user.hired ? 'Yes' : 'No'}}</td>

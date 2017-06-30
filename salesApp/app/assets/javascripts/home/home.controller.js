@@ -35,9 +35,9 @@
         .module('app')
         .controller('HomeController', HomeController)
 
-    HomeController.$inject = [ 'Auth', '$stateParams', '$rootScope', '$location', '$http', 'UsersFactory', 'ModalService', 'JobsFactory' ];
+    HomeController.$inject = [ 'Auth', '$stateParams', '$rootScope', '$location', '$http', 'UsersFactory', 'ModalService', 'JobsFactory', 'IntervieweesFactory' ];
 
-   function HomeController(Auth, $stateParams, $rootScope, $location, $http, UsersFactory, ModalService, JobsFactory) {
+   function HomeController(Auth, $stateParams, $rootScope, $location, $http, UsersFactory, ModalService, JobsFactory, IntervieweesFactory) {
         
         var vm = this
         vm.logout = Auth.logout
@@ -53,6 +53,7 @@
         vm.getJobShow = getJobShow
         vm.setJobShow = setJobShow
         vm.editJob = editJob
+        vm.getInterviewees = getInterviewees
 
 
         if (!!$stateParams.id) {
@@ -61,6 +62,7 @@
         }
         getUsers();
         getJobs();
+        getInterviewees();
 
         function changeLocation(location) {
           vm.location = location
@@ -140,6 +142,20 @@
                                 .then($route.reload())
           }
 
+
+
+        //Interviewees
+        
+        function getInterviewees() {
+          return IntervieweesFactory.getIndex()
+                                    .then(setInterviewees)
+        }
+
+        function setInterviewees(data) {
+          vm.interviewees = data
+          //able to get all in the interviewees. can go to data[0].job.user_id 
+          //if want to create page for companies to see theirs
+        }  
 
 
 

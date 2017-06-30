@@ -27,4 +27,6 @@ Rails.application.routes.draw do
 
   patch '/jobs/:id', to: 'jobs#update'
 
+  get '/interviewees', to: 'interviewees#index'
+
 end
