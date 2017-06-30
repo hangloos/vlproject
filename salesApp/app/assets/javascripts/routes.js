@@ -32,7 +32,8 @@ angular
                 })
                 .state('home.jobs', {
                     url: 'jobs',
-                    templateUrl: 'home/jobs.html'
+                    templateUrl: 'jobs/jobs.html',
+                    controller: 'JobsController as vm'
                 })
 
                 $urlRouterProvider.otherwise('/');

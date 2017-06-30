@@ -10,6 +10,7 @@ angular
       updateUser: updateUser,
       getUsers: getUsers,
       setUser: setUser,
+      getUser: getUser,
       isLoggedIn: isLoggedIn,
       setupInterview: setupInterview,
       deleteUser: deleteUser
@@ -32,6 +33,12 @@ angular
     }
     function setUser(user)  {
       user = user
+    }
+
+    function getUser() {
+      return $http.get('/getuser')
+                    .then(handleResponse)
+                    .catch(handleError)
     }
 
     function isLoggedIn() {

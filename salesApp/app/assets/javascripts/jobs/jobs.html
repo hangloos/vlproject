@@ -1,0 +1,51 @@
+
+<div id="notice" class="text-center"></div>
+
+<div class="container" ng-show="showCreateJob">
+    <div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                <form ng-submit="vm.createJob(jobModel)">
+                    Title: <input type="text" name="title" ng-model="jobModel.title">
+                    Description: <textarea rows="6" cols="30" name="description" ng-model="jobModel.description"></textarea>
+                    Qualifications: <textarea rows="6" cols="30" name="qualifications" ng-model="jobModel.qualifications"></textarea>
+                    Benefits: <textarea rows="6" cols="30" name="benefits" ng-model="jobModel.benefits"></textarea>
+                    Salary: <input type="text" name="salary" ng-model="jobModel.salary">
+                    <button class="btn btn-success login" name="jobForm" type="submit">Create Job</button>
+                </form>
+            </div>
+        </div>       
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <button class="btn-primary btn" ng-click="showCreateJob = !showCreateJob">Create A Job</button>
+        <h4>Jobs</h4>
+        <div class="table-responsive">
+
+                
+                    <table id="mytable" cellspacing="1" class="table table-bordred table-striped">
+                                       
+                                       <thead>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                       </thead>
+                        <tbody ng-repeat="job in vm.user.jobs">
+                        
+                                        <tr>
+                                        <td>{{job.title}}</td>
+                                        <td>{{job.description}}</td>
+                                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ng-click="vm.modalUpdate(user)"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ng-click="vm.modalUpdate(user)"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                        </tr>
+                        
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>

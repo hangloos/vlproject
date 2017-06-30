@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   delete '/user/:id', to: 'user#destroy'
 
+  post '/createJob', to: 'jobs#create'
+
+  get '/jobs', to: 'jobs#index'
+
 end

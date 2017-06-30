@@ -2,7 +2,7 @@ require 'pry'
 class UserController < ApplicationController
 
   def index
-    render json: User.all
+    render json: User.eager_load(:jobs).all
   end
 
   def new
@@ -45,7 +45,6 @@ class UserController < ApplicationController
     @company = User.find(params[:company][:id])
     InterviewSetup.interview_email(@user, @company).deliver
   end
-
 
 
 
