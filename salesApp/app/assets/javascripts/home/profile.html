@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6 marginColumn">
       <h2>{{vm.user.first_name}} {{vm.user.last_name}}'s User Profile</h2><h4 ng-show="vm.user.access_level === 'company_admin'">Company: {{vm.user.company}}</h4>
       <h4>Email: {{vm.user.email}}</h4>
       <h4>Phone: {{vm.user.phone}}</h4>
@@ -10,11 +10,17 @@
       <h4 ng-show="vm.user.access_level === 'candidate'">College: {{vm.user.college}}</h4>
       <h4 ng-show="vm.user.access_level === 'candidate'">Major: {{vm.user.major}}</h4>
       <h4 ng-show="vm.user.access_level === 'candidate'">College Graduation Year: {{vm.user.college_graduation}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Favorite Food: {{vm.user.food}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Currenly Reading: {{vm.user.books}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Favorite Book: {{vm.user.fav_book}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Hobbies: {{vm.user.hobbies}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Skills You've Mastered: {{vm.user.skills}}</h4>
+      <h4 ng-show="vm.user.access_level === 'candidate'">Your Idol: {{vm.user.idol}}</h4>
       <h4 ng-show="vm.user.access_level === 'candidate'">Graduated Victory Lap: {{vm.user.graduated}}</h2>
       <h4 ng-show="vm.user.access_level === 'candidate'">Currently Employed: {{vm.user.hired}}</h4>
-        <button class="btn btn-default" ng-click="showEditProfileForm = !showEditProfileForm">Edit Profile</button>
+        <button class="btn btn-primary" ng-click="showEditProfileForm = !showEditProfileForm">Edit Profile</button>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-5">
 <form ng-show="showEditProfileForm">
   <h2>Edit Profile</h2>
   <p>First Name: <input type="text" name="first_name" ng-model="vm.user.first_name"></p>
@@ -28,9 +34,15 @@
   <p ng-show="vm.user.access_level === 'candidate'">Resume: <input type="url" name="resume" ng-model="vm.user.resume_url"></p>
   <p ng-show="vm.user.access_level === 'candidate'">College: <input type="text" name="college" ng-model="vm.user.college"></p>
   <p ng-show="vm.user.access_level === 'candidate'">Major: <input type="text" name="major" ng-model="vm.user.major"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Favorite Food: <input type="text" name="food" ng-model="vm.user.food"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Currently Reading: <input type="text" name="reading" ng-model="vm.user.books"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Favorite Book: <input type="text" name="book" ng-model="vm.user.fav_book"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Hobbies: <input type="text" name="hobbies" ng-model="vm.user.hobbies"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Skills You've Mastered: <input type="text" name="skills" ng-model="vm.user.skills"></p>
+  <p ng-show="vm.user.access_level === 'candidate'">Your Idol: <input type="text" name="idol" ng-model="vm.user.idol"></p>
   <p ng-show="vm.user.access_level === 'candidate'">College Graduation Year<input type="text" name="college_graduation" ng-model="vm.user.college_graduation"></p>
   <p ng-show="vm.user.access_level === 'candidate'">Currently Employed: <input type="radio" name="graduated" value="true" ng-model="vm.user.hired">True <input type="radio" name="graduated" value="false" ng-model="vm.user.hired">False</p>
-  <button type="submit" class="btn btn-default" ng-click="vm.editUser(vm.user.id, vm.user)">Save Edit</button>
+  <button type="submit" class="btn btn-success" ng-click="vm.editUser(vm.user.id, vm.user)">Save Edit</button>
 </form>
 </div>
 </div>
