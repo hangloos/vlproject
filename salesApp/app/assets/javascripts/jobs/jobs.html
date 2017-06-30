@@ -3,22 +3,26 @@
 <div id="notice" class="text-center"></div>
 
 <div class="container" ng-show="showCreateJob">
-    <div class="login-container">
+    <div class="jobs-container">
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
                 <form ng-submit="vm.createJob(jobModel)">
-                    Title: <input type="text" name="title" ng-model="jobModel.title">
-                    Description: <textarea rows="6" cols="30" name="description" ng-model="jobModel.description"></textarea>
-                    Qualifications: <textarea rows="6" cols="30" name="qualifications" ng-model="jobModel.qualifications"></textarea>
-                    Benefits: <textarea rows="6" cols="30" name="benefits" ng-model="jobModel.benefits"></textarea>
-                    Salary: <input type="text" name="salary" ng-model="jobModel.salary">
+                    <input placeholder="Title" class="row form-group" type="text" name="title" ng-model="jobModel.title">
+                    <textarea class="row form-group" placeholder="Description" rows="6" cols="30" name="description" ng-model="jobModel.description"></textarea>
+                    <textarea placeholder="Qualifications" class="row form-group" rows="6" cols="30" name="qualifications" ng-model="jobModel.qualifications"></textarea>
+                    <textarea placeholder="Benefits" class="row form-group" rows="6" cols="30" name="benefits" ng-model="jobModel.benefits"></textarea><br>
+                    <input  placeholder="Salary" class="row form-group" type="text" name="salary" ng-model="jobModel.salary"><br>
+                    <input placeholder="URL" class="row form-group" type="url" name="url">
                     <button class="btn btn-success login" name="jobForm" type="submit">Create Job</button>
                 </form>
             </div>
         </div>       
 </div>
 
+
+<!-- Dependancies -->
+<link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?rd5re8">
 
 
 <div class="container">
@@ -28,7 +32,7 @@
         <div class="table-responsive">
 
                 
-                    <table id="mytable" cellspacing="1" class="table table-hover">
+                    <table id="mytable" cellspacing="1" class="table">
                                        
                                        <thead>
                                         <th>Title</th>
