@@ -55,6 +55,7 @@
         }
 
         function getUsers() {
+          debugger
           return UsersFactory.getUsers()
                 .then(setUsers)
         }
