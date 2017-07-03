@@ -93,7 +93,11 @@
         }
 
         vm.setupInterview = function(user, company, job) {
-          return UsersFactory.setupInterview(user, company, job)
+          if (!job) {
+            return UsersFactory.setupInterview(user, company, company.jobs[0])
+          } else {
+            return UsersFactory.setupInterview(user, company, job)
+          }
         }
         
         vm.deleteUser = function(user)  {

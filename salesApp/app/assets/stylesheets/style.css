@@ -185,3 +185,10 @@ a.headerLogo:hover {
     table-layout: fixed;
 
 }
+
+.profile-text {
+    color: #ECECEC;
+}
+.modalBackground {
+    background-color: #4B77BE;
+}

@@ -1,20 +1,20 @@
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
       <div class="modal-dialog">
     <div class="modal-content">
-          <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="text-center">{{vm.selectedUser.first_name}} {{vm.selectedUser.last_name}}</h4>
-        <p class="text-center">{{vm.selectedUser.email}}, {{vm.selectedUser.phone}}</p>
-        <br>
-        <p>Currently Reading: <span>{{vm.user.books}}</span></p>
-        <p>Favorite Book: {{vm.user.fav_book}}</p>
-        <p>Favorite Food: {{vm.user.food}}</p>
-        <p>Hobbies: {{vm.user.hobbies}}</p>
-        <p>My Idol: {{vm.user.idol}}</p>
+        <div class="modal-header modalBackground">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+          <h4 class="text-center profile-text">{{vm.selectedUser.first_name}} {{vm.selectedUser.last_name}}</h4>
+          <p class="text-center profile-text">{{vm.selectedUser.email}}, {{vm.selectedUser.phone}}</p>
+          <br>
+          <p class="profile-text">Currently Reading:<strong>{{vm.selectedUser.books}}</strong></p>
+          <p class="profile-text">Favorite Book: <strong>{{vm.selectedUser.fav_book}}</strong></p>
+          <p class="profile-text">Favorite Food: <strong>{{vm.selectedUser.food}}</strong></p>
+          <p class="profile-text">Hobbies: <strong>{{vm.selectedUser.hobbies}}</strong></p>
+          <p class="profile-text">My Idol: <strong>{{vm.selectedUser.idol}}</strong></p>
         <!-- <button class="btn btn-primary">Add Your Notes</button> -->
       </div>
-          <div class="modal-body">
-            <h3>Victory Lap's Notes: {{vm.selectedUser.notes}}</h3>
+          <div class="modal-body modalBackground">
+            <h3 style="color:#BFBFBF;">Victory Lap's Notes: {{vm.selectedUser.notes}}</h3>
             <!-- <button class="btn btn-success" ng-really-message="Are you sure you want to interview this candidate? This will send a direct email to them."? ng-really-click="vm.setupInterview(user, vm.user)">Interview</button> -->
           </div>
       </div>
