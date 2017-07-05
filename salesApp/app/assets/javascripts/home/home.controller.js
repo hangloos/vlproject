@@ -56,6 +56,7 @@
         vm.getInterviewees = getInterviewees
 
 
+        vm.currentPath = $location.path()
         if (!!$stateParams.id) {
           getJobShow($stateParams.id);
 

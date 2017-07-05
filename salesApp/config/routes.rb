@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :jobs
-  get '/', to: 'home#index'
+  root 'home#index'
 
   devise_for :users
   
