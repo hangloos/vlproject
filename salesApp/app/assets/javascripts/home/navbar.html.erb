@@ -19,6 +19,7 @@
             <li><a ng-show="!!vm.user" ng-click="vm.logout()">Logout</a></li>
           </ul> -->
           <ul class="nav navbar-nav navbar-right">
+          <li><a ng-show="vm.user.access_level === 'super_admin'" href="/admin">Admin Dashboard</a></li>
             <li><a ng-show="vm.user.access_level === 'super_admin'" href="/#/users" ng-click="vm.getUsers(); vm.changeLocation('#/users')">Users</a></li>
             <li><a ng-show="vm.user.access_level === 'super_admin'" href="/RegisterAdminSecretPage">Register Users</a></li>
             <li><a ng-show="vm.user.access_level === 'super_admin'" href="/#/interviewees" ng-click="vm.changeLocation('#/interviewees')">Interviewees</a></li>
@@ -27,8 +28,7 @@
             <li><a ng-show="!!vm.user" ui-sref=".profile" ng-click="vm.changeLocation('#/profile')">Profile</a></li>
             <li><a ng-show="!vm.user" href="/">Login</a></li>
             <li><a ng-show="!!vm.user" ng-click="vm.logout()">Logout</a></li> 
-            <li><a href="http://www.victorylap.io/" target="_blank">Website</a></li>
-            <li><a href="http://www.victorylap.io/blog/" target="_blank">Our Blog</a></li>          
+            <li><a href="http://www.victorylap.io/" target="_blank">Website</a></li>        
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
